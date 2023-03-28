@@ -2,66 +2,43 @@ import { useEffect, useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+import AddItemControl from './components/AddItemControl/AddItemControl';
+import ToDoList from './components/ToDoList/ToDoList';
+import useListData from './hooks/useListData'
+import ToDoTitle from './components/ToDoTitle/ToDoTitle';
+
+// const exampleData = [
+//   "Whatever",
+//   "For",
+//   "A",
+//   "Few",
+//   "Things",
+// ]
+
 function App({ people }) {
-  const [headerColor, setHeaderColor] = useState("#61dafb")
 
-  useEffect(() => {
-    console.log("Color is", headerColor)
-  }, [headerColor])
+  const { clearList, listData, addItem } = useListData();
+  // const [listData, setListData] = useState(useListData())
 
-  function headerColorButtonHandler() {
-    if (headerColor === "#da1111") {
-      setHeaderColor("#61dafb");
-    }
-    else {
-      setHeaderColor("#da1111");
-    }
-  }
+  // useEffect(() => {
+  //   addItem("test")
+  // }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <h1
-          style={{ color: headerColor }}
-        >
-          Hello People!
+    <div className='App'>
+      <ToDoTitle />
+      <AddItemControl
+        addItem={addItem}
+      />
+      <ToDoList
+        listData={listData}
+        // setListData={setListData}
+        clearList={clearList}
 
-        </h1>
-
-        <button
-          onClick={headerColorButtonHandler}
-        >
-          Change Color
-        </button>
-
-        <ul>
-          {
-            people && people.map((person) => (
-              <GreetingListItem
-                name={person.name}
-                fruit={person.fruit}
-              />
-            ))
-          }
-          {
-            people === undefined && ("People is undefined.")
-          }
-          {
-            people === null && ("People is null.")
-          }
-        </ul>
-      </header>
+      />
     </div>
   );
+
 }
 
-
-function GreetingListItem({ name = "Paul", fruit = "Cherry" }) {
-  return (
-    <li>
-      <span className="greeting">Hello</span> {name} <span className="fruit">Favorite fruit: {fruit}</span>
-    </li>
-  );
-}
 export default App;

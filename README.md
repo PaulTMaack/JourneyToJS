@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Journey To JS
+Paul's Journey to learn JavaScript!
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
