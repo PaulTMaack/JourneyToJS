@@ -13,6 +13,7 @@ const AddItemControl = ({ addItem }) => {
   return (
     <div className="AddItem">
       <input
+        className="AddItem-Input"
         type="text"
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}

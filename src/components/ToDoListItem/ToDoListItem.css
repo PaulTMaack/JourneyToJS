@@ -1,0 +1,35 @@
+.ToDoListItem {
+  background-color: fuchsia;
+  padding: .6rem 1rem;
+  margin-bottom: .25rem;
+  transition: background-color 125ms;
+  border-radius: .25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ToDoListItem:hover {
+  cursor: pointer;
+  background-color: purple;
+}
+
+.ToDoListItem:has(.Checked)>.ToDoListItemText {
+  text-decoration: line-through;
+  opacity: 60%;
+}
+
+.ToDoListItemCheck {
+  width: 24px;
+  height: 24px;
+  background-color: blue;
+  border-radius: 16px;
+}
+
+.Checked.ToDoListItemCheck {
+  background-color: green;
+}
+
+.ToDoListItemCheck.Unchecked {
+  background-color: red;
+}

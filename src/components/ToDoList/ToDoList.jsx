@@ -27,13 +27,21 @@ const ToDoList = ({ listData, clearList }) => {
       >
         Clear The To Do List!
       </button>
-
-      I am the To Do List!
+      {/*
+{
+      "id": 1,
+      "task": "Pet Cat",
+      "isChecked": false,
+      "createdAt": "2023-04-02T23:22:20.459Z",
+      "updatedAt": "2023-04-02T23:22:20.459Z"
+}
+  */}
       {
         listDataExistsAndIsNotEmpty(listData) && listData.map(item => (
           <ToDoListItem
-            itemText={item}
-            key={item}
+            itemText={item.task}
+            key={item.id}
+            isChecked={item.isChecked}
           />
         ))
       }

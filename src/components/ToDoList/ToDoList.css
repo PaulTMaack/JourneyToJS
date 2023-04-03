@@ -1,0 +1,7 @@
+.ToDoList {
+  width: 80%;
+  background-color: yellow;
+  align-self: center;
+  padding: 1rem;
+  border-radius: .5rem;
+}

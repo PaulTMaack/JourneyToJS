@@ -1,0 +1,15 @@
+.AddItem {
+  background-color: beige;
+  width: 80%;
+  align-self: center;
+  border-radius: .25rem;
+  padding: .25rem;
+  margin-bottom: 1rem;
+  display: flex;
+
+}
+
+.AddItem-Input {
+  margin-right: .5rem;
+  flex-grow: 1;
+}

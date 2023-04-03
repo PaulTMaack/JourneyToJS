@@ -1,8 +1,20 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
+body {
+  padding: 1rem;
+}
+
+.App {
+  /* background-color: cyan; */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -36,7 +48,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .greeting {
   color: blue;
