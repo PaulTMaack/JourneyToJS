@@ -15,9 +15,14 @@ import ToDoTitle from './components/ToDoTitle/ToDoTitle';
 //   "Things",
 // ]
 
-function App({ people }) {
+function App() {
 
-  const { clearList, listData, addItem } = useListData();
+  const {
+    addItem,
+    clearList,
+    listData,
+    toggleCheck,
+  } = useListData();
   // const [listData, setListData] = useState(useListData())
 
   // useEffect(() => {
@@ -34,7 +39,7 @@ function App({ people }) {
         listData={listData}
         // setListData={setListData}
         clearList={clearList}
-
+        toggleCheck={toggleCheck}
       />
     </div>
   );

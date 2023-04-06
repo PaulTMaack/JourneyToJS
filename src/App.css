@@ -8,6 +8,7 @@ body {
 
 .App {
   /* background-color: cyan; */
+
   display: flex;
   flex-direction: column;
   text-align: left;

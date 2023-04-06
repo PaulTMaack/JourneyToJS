@@ -1,15 +1,23 @@
 import React from 'react';
 import './ToDoListItem.css'
 
-const ToDoListItem = ({ itemText, isChecked = false }) => {
+const ToDoListItem = ({
+  itemText,
+  isChecked = false,
+  item,
+  toggleCheck
+}) => {
   return (
-    <div className="ToDoListItem">
+    <div
+      className="ToDoListItem"
+      onClick={() => toggleCheck(item)}
+    >
       <div className="ToDoListItemText">
-        {itemText}
+        {item.task}
       </div>
 
       <div
-        className={`ToDoListItemCheck ${isChecked ? "Checked" : "Unchecked"}`}
+        className={`ToDoListItemCheck ${item.isChecked ? "Checked" : "Unchecked"}`}
       >
         &nbsp;
       </div>

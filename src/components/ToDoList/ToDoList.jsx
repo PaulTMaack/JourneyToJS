@@ -12,7 +12,7 @@ import "./ToDoList.css"
 //   "Things",
 // ]
 
-const ToDoList = ({ listData, clearList }) => {
+const ToDoList = ({ listData, clearList, toggleCheck }) => {
 
   const listDataExistsAndIsNotEmpty = (data) =>
     data &&
@@ -39,6 +39,8 @@ const ToDoList = ({ listData, clearList }) => {
       {
         listDataExistsAndIsNotEmpty(listData) && listData.map(item => (
           <ToDoListItem
+            toggleCheck={toggleCheck}
+            item={item}
             itemText={item.task}
             key={item.id}
             isChecked={item.isChecked}
