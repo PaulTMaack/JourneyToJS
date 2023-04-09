@@ -1,16 +1,22 @@
 import React from 'react';
 import './ToDoListItem.css'
+import {
+  HiTrash,
+} from "react-icons/hi2";
 
 const ToDoListItem = ({
-  itemText,
-  isChecked = false,
+
+  deleteItem,
+  // isChecked = false,
   item,
-  toggleCheck
+  // itemText,
+  toggleCheck,
 }) => {
   return (
     <div
       className="ToDoListItem"
       onClick={() => toggleCheck(item)}
+    // onClick={() => deleteItem(item)}
     >
       <div className="ToDoListItemText">
         {item.task}

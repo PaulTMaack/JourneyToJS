@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import {
   createToDo,
+  deleteToDo,
   getAllToDos,
   toggleToDo,
 } from '../api/api';
@@ -82,10 +83,22 @@ export default function useListData() {
     submitData();
   }
 
+  const deleteItem = (toDoObject) => {
+    const submitData = async () => {
+      const responseData = await deleteToDo(toDoObject);
+      console.log("deleteItem: ", responseData);
+      //TODO: Check for valid response from above. Need to make sure the operation went through. Only update UI if response.ok. 
+      setListData(listData.filter((item) => item.id !== toDoObject.id))
+    }
+    submitData();
+  }
+
   return {
     addItem,
     clearList,
+    deleteItem,
     listData,
     toggleCheck,
+
   };
 }

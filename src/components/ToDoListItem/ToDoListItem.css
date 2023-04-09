@@ -1,6 +1,7 @@
 .ToDoListItem {
-  background-color: fuchsia;
+  background-color: #eee;
   padding: .6rem 1rem;
+  border: 1px solid #eee;
   margin-bottom: .25rem;
   transition: background-color 125ms;
   border-radius: .25rem;
@@ -11,7 +12,7 @@
 
 .ToDoListItem:hover {
   cursor: pointer;
-  background-color: purple;
+  background-color: #fff;
 }
 
 .ToDoListItem:has(.Checked)>.ToDoListItemText {

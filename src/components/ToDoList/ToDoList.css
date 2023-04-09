@@ -1,6 +1,8 @@
 .ToDoList {
   width: 80%;
-  background-color: yellow;
+  background-color: white;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0px 12px 32px #00000033;
   align-self: center;
   padding: 1rem;
   border-radius: .5rem;

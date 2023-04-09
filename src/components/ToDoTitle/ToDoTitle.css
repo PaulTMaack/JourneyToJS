@@ -1,0 +1,30 @@
+.logo-wrapper {
+  max-width: 4rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrapper svg {
+  color: rgb(60, 60, 226);
+  font-size: 2.5rem;
+}
+
+.ToDoTitle {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ToDoTitle h1 {
+  display: inline;
+  margin: 0rem;
+  /* display: block;
+font-size: 2em;
+margin-block-start: 0.67em;
+margin-block-end: 0.67em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-weight: bold; */
+}

@@ -19,6 +19,7 @@ const AddItemControl = ({ addItem }) => {
         onChange={(e) => setNewItem(e.target.value)}
       />
       <button
+        className="AddItem-Button"
         onClick={submitHandler}
       >
         Add ToDo
@@ -26,5 +27,6 @@ const AddItemControl = ({ addItem }) => {
     </div>
   )
 }
+
 
 export default AddItemControl;

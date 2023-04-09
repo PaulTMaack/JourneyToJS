@@ -4,15 +4,8 @@ import ToDoListItem from "../ToDoListItem/ToDoListItem";
 
 import "./ToDoList.css"
 
-// const listData = [
-//   "Whatever",
-//   "For",
-//   "A",
-//   "Few",
-//   "Things",
-// ]
 
-const ToDoList = ({ listData, clearList, toggleCheck }) => {
+const ToDoList = ({ listData, clearList, toggleCheck, deleteItem }) => {
 
   const listDataExistsAndIsNotEmpty = (data) =>
     data &&
@@ -22,11 +15,11 @@ const ToDoList = ({ listData, clearList, toggleCheck }) => {
   return (
     <div className="ToDoList">
 
-      <button
+      {/* <button
         onClick={clearList}
       >
         Clear The To Do List!
-      </button>
+      </button> */}
       {/*
 {
       "id": 1,
@@ -39,11 +32,12 @@ const ToDoList = ({ listData, clearList, toggleCheck }) => {
       {
         listDataExistsAndIsNotEmpty(listData) && listData.map(item => (
           <ToDoListItem
-            toggleCheck={toggleCheck}
-            item={item}
-            itemText={item.task}
+            deleteItem={deleteItem}
             key={item.id}
-            isChecked={item.isChecked}
+            // isChecked={item.isChecked}
+            item={item}
+            // itemText={item.task}
+            toggleCheck={toggleCheck}
           />
         ))
       }

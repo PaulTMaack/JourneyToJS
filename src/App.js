@@ -22,6 +22,7 @@ function App() {
     clearList,
     listData,
     toggleCheck,
+    deleteItem,
   } = useListData();
   // const [listData, setListData] = useState(useListData())
 
@@ -40,6 +41,7 @@ function App() {
         // setListData={setListData}
         clearList={clearList}
         toggleCheck={toggleCheck}
+        deleteItem={deleteItem}
       />
     </div>
   );

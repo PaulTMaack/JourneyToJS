@@ -8,48 +8,73 @@ export async function getAllToDos() {
   const jsonResponse = await response.json();
   return jsonResponse;
 }
-
 // TODO:remove code redundancy between this function and toggleToDo
 export async function createToDo(newTask) {
   // Build a new ToDo Object (Task) for adding into the list. 
   const toDoData = {
     task: newTask,
   }
-
-  // Specify the HTTP method, Headers and Body for fetch. 
-  const fetchOptions = {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json",
-    },
-    // Stringify our new ToDo object for the request body. 
-    body: JSON.stringify({ data: toDoData }),
-  }
-
-  const response = await fetch(toDoRoute, fetchOptions);
-  const jsonResponse = await response.json();
-  return jsonResponse;
+  return makeCRUDRequest('POST', toDoData);
 }
 
 export async function toggleToDo(toDoObject) {
   // get the ID for the object. 
-  const requestRoute = `${toDoRoute}/${toDoObject.id}`
-
+  const requestRoute = `/${toDoObject.id}`
   const toDoData = {
     isChecked: !toDoObject.isChecked,
   }
+  return makeCRUDRequest('PUT', toDoData, requestRoute)
+}
 
-  // Specify the HTTP method, Headers and Body for fetch. 
+export async function deleteToDo(toDoObject) {
+  const requestRoute = `/${toDoObject.id}`
+  return makeCRUDRequest('DELETE', null, requestRoute)
+}
+
+async function makeCRUDRequest(
+  method,
+  toDoData = null,
+  apiPath = "",
+) {
+  const requestRoute = `${toDoRoute}${apiPath}`;
+
   const fetchOptions = {
-    method: 'PUT',
+    method: method,
     headers: {
       "Content-Type": "application/json",
     },
     // Stringify our new ToDo object for the request body. 
-    body: JSON.stringify({ data: toDoData }),
+    ...(toDoData && { body: JSON.stringify({ data: toDoData }) }),
   }
 
   const response = await fetch(requestRoute, fetchOptions);
   const jsonResponse = await response.json();
   return jsonResponse;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
