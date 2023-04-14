@@ -21,10 +21,7 @@
 }
 
 .ToDoListItemCheck {
-  width: 24px;
-  height: 24px;
   background-color: blue;
-  border-radius: 16px;
 }
 
 .Checked.ToDoListItemCheck {
@@ -33,4 +30,31 @@
 
 .ToDoListItemCheck.Unchecked {
   background-color: red;
+}
+
+.ToDoListItemControls {
+  display: flex;
+
+}
+
+.ToDoListItemDelete {
+  background-color: transparent;
+  /* margin-right: .5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  transition: color 100ms, background-color 100ms;
+}
+
+.ToDoListItemDelete:hover {
+  color: white;
+  background-color: #111;
+}
+
+.ToDoListItemCheck,
+.ToDoListItemDelete {
+  width: 24px;
+  height: 24px;
+  border-radius: 16px;
 }

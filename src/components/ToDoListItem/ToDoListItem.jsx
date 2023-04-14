@@ -16,16 +16,24 @@ const ToDoListItem = ({
     <div
       className="ToDoListItem"
       onClick={() => toggleCheck(item)}
-    // onClick={() => deleteItem(item)}
     >
-      <div className="ToDoListItemText">
+      <div className={`ToDoListItemText ${item.isChecked ? "Checked" : "Unchecked"}`}>
+
         {item.task}
       </div>
 
-      <div
-        className={`ToDoListItemCheck ${item.isChecked ? "Checked" : "Unchecked"}`}
-      >
-        &nbsp;
+      <div className="ToDoListItemControls">
+        <div className="ToDoListItemDelete"
+          onClick={() => deleteItem(item)}
+        >
+          <HiTrash />
+        </div>
+        {/* <div
+          className={`ToDoListItemCheck ${item.isChecked ? "Checked" : "Unchecked"}`}
+        >
+          &nbsp;
+        </div> */}
+
       </div>
     </div>
   );
