@@ -8,7 +8,8 @@ const LoginPage = ({
   const {
     login,
     logout,
-    user
+    user,
+    loginWithMicrosoft,
   } = useContext(AuthContext)
 
 
@@ -26,9 +27,12 @@ const LoginPage = ({
             Logout
           </button>)
           :
-          (<button onClick={login}>
-            Login
+          (<button onClick={loginWithMicrosoft}>
+            Login With Microsoft
           </button>)
+        // (<button onClick={login}>
+        //   Login
+        // </button>)
       }
     </div>);
 }

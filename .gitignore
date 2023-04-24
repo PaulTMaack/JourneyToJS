@@ -24,3 +24,4 @@ yarn-error.log*
 
 #added additional ignores 
 /Notes
+/src/firebase

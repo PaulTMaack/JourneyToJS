@@ -9,6 +9,7 @@ import useListData from './hooks/useListData'
 import ToDoTitle from './components/ToDoTitle/ToDoTitle';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import { AuthContext, AuthContextProvider } from './contexts/AuthContext';
+import { app } from './firebase/firebase';
 
 import LoginPage from './pages/LoginPage';
 import {
@@ -52,10 +53,21 @@ function HomePage({
     deleteItem,
   } = useListData();
 
+  useEffect(() => {
+    // console.log("firebase app:", app)
+  }, []) //second parameter being empty array means it only loads on first render. 
+
+  const { logout } = useContext(AuthContext);
+
   return (
     <div className='App'>
       <ToDoTitle></ToDoTitle>
-      <Link to={'/login'}>Login Page</Link>
+      {/* <Link to={'/login'}>Login Page</Link> */}
+      <div className='logout-wrapper'>
+        <button onClick={logout}>
+          Logout
+        </button>
+      </div>
       <AddItemControl
         addItem={addItem}
       />
